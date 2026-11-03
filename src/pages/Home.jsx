@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Hero />
       <AboutSection />
-      <ProductsSection />
+      <ProductsSection limit={3} />
     </>
   );
 };
