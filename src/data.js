@@ -23,7 +23,7 @@ export const PRODUCTS = [
     category: "Premium Elixir",
     pv: 20,
     price: "₦20,000",
-    image: "/images/coffee-placeholder.png",
+    image: "/products/dateSeedCoffee.png",
     shortDesc: "A rich herbal blend providing daily balance and polyphenol antioxidant defense.",
     benefits: [
       "Balanced daily vitality",
@@ -39,7 +39,7 @@ export const PRODUCTS = [
     category: "Vitality & Energy",
     pv: 24.5,
     price: "₦24,500",
-    image: "/images/ganoderma-placeholder.png",
+    image: "/products/noirVigor.png",
     shortDesc: "Formulated with premium Ganoderma extracts for stamina and cellular vitality.",
     benefits: [
       "Boosts stamina & endurance",
@@ -55,7 +55,7 @@ export const PRODUCTS = [
     category: "Men's Formula",
     pv: 17,
     price: "₦17,000",
-    image: "/images/zestyl-man-placeholder.png",
+    image: "/products/zestylMen.png",
     shortDesc: "Supports male endurance, energy recovery, and physical focus.",
     benefits: [
       "Supports male performance & vitality",
@@ -71,7 +71,7 @@ export const PRODUCTS = [
     category: "Women's Formula",
     pv: 16,
     price: "₦16,000",
-    image: "/images/zestyl-woman-placeholder.png",
+    image: "/products/zestylWomen.png",
     shortDesc: "Gently balances hormones and supports daily emotional and physical wellness.",
     benefits: [
       "Balances hormones gently",
@@ -87,7 +87,7 @@ export const PRODUCTS = [
     category: "Immunity",
     pv: 9,
     price: "₦9,000",
-    image: "/images/artemix-placeholder.png",
+    image: "/products/artemixInfusion.png",
     shortDesc: "Infused herbal defense supporting body circulation and immune resilience.",
     benefits: [
       "Strengthens immunity",
@@ -103,7 +103,7 @@ export const PRODUCTS = [
     category: "Calm & Sleep",
     pv: 11,
     price: "₦13,000",
-    image: "/images/tea-placeholder.png",
+    image: "/products/chamomilePlusTea.png",
     shortDesc: "Soothes digestion and relaxes the mind for deep, restorative sleep.",
     benefits: [
       "Relieves stress & promotes calm",
@@ -119,7 +119,7 @@ export const PRODUCTS = [
     category: "Natural Energy",
     pv: 8,
     price: "₦10,800",
-    image: "/images/syrup-placeholder.png",
+    image: "/products/dateSyrup.png",
     shortDesc: "Unrefined date syrup packed with natural minerals and brain-fueling nutrients.",
     benefits: [
       "Instant brain fuel & memory",

@@ -7,13 +7,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  // Separate regular links from the Login button CTA
+  const navLinks = NAV_LINKS.filter((link) => link.href !== "/login");
+  const loginLink = NAV_LINKS.find((link) => link.href === "/login") || {
+    name: "Login",
+    href: "/login",
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Header Logo Slot */}
-          <Link to="/" className="flex items-center gap-3 group">
+          {/* LHS: Header Logo */}
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
             <div className="w-10 h-10 rounded-xl bg-vitaluxe-green-100 flex items-center justify-center border border-vitaluxe-green-500/20 group-hover:scale-105 transition-transform">
               <img 
                 src="/icon.png" 
@@ -34,31 +41,18 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map((link) => {
+          {/* MIDDLE: Centered Navigation Links (Home, About, Products, Complan) */}
+          <div className="hidden md:flex flex-1 justify-center items-center space-x-8 px-6">
+            {navLinks.map((link) => {
               const isActive = location.pathname === link.href;
-              const isLogin = link.href === "/login";
-
-              if (isLogin) {
-                return (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="flex items-center gap-2 bg-vitaluxe-green-800 hover:bg-vitaluxe-green-900 text-white font-header text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all"
-                  >
-                    <FaUserLock className="text-vitaluxe-gold-400" />
-                    {link.name}
-                  </Link>
-                );
-              }
-
               return (
                 <Link
                   key={link.name}
                   to={link.href}
                   className={`font-header text-sm font-semibold transition-colors ${
-                    isActive ? "text-vitaluxe-green-800 border-b-2 border-vitaluxe-gold-500 pb-1" : "text-slate-600 hover:text-vitaluxe-green-800"
+                    isActive 
+                      ? "text-vitaluxe-green-800 border-b-2 border-vitaluxe-gold-500 pb-1" 
+                      : "text-slate-600 hover:text-vitaluxe-green-800"
                   }`}
                 >
                   {link.name}
@@ -67,7 +61,18 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* RHS: Dedicated Login CTA Button */}
+          <div className="hidden md:flex items-center shrink-0">
+            <Link
+              to={loginLink.href}
+              className="flex items-center gap-2 bg-vitaluxe-green-800 hover:bg-vitaluxe-green-900 text-white font-header text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all hover:shadow-md"
+            >
+              <FaUserLock className="text-vitaluxe-gold-400" />
+              {loginLink.name}
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-2xl text-vitaluxe-green-900 p-2 focus:outline-none"
@@ -78,10 +83,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (Includes Complan in links and Login as button) */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-          {NAV_LINKS.map((link) => (
+        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+          {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
@@ -91,6 +96,15 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+          
+          <Link
+            to={loginLink.href}
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center gap-2 bg-vitaluxe-green-800 text-white font-header text-sm font-semibold px-5 py-2.5 rounded-lg shadow-xs mt-3"
+          >
+            <FaUserLock className="text-vitaluxe-gold-400" />
+            {loginLink.name}
+          </Link>
         </div>
       )}
     </nav>

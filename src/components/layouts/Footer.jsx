@@ -36,7 +36,7 @@ export default function Footer() {
               <li><Link to="/" className="hover:text-vitaluxe-gold-400 transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-vitaluxe-gold-400 transition-colors">About Us</Link></li>
               <li><Link to="/products" className="hover:text-vitaluxe-gold-400 transition-colors">Products</Link></li>
-              <li><Link to="/login" className="hover:text-vitaluxe-gold-400 transition-colors">Complan Login</Link></li>
+              <li><Link to="/complan" className="hover:text-vitaluxe-gold-400 transition-colors">Complan</Link></li>
             </ul>
           </div>
 

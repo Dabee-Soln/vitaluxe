@@ -24,7 +24,7 @@ export default function ProductsSection({ limit }) {
               Natural Formulations
             </span>
             <h2 className="text-3xl sm:text-4xl font-header font-bold text-white">
-              Premium Wellness Products[cite: 14]
+              Premium Wellness Products
             </h2>
             <p className="text-vitaluxe-green-100 text-sm sm:text-base mt-2 max-w-xl">
               Natural formulations crafted for health, energy, and complete
